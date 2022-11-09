@@ -1,0 +1,34 @@
+particulars,posting_date,cost_center,voucher_type,debit,credit,net_balance
+Opening Balance,,,,,,0.000000
+Funds added using UPI XMU913 with reference number 224865060851,2022-09-05,NSE-EQ - Z,Bank Receipts,0.000000,10000.000000,10000.000000
+Net settlement for Equity with settlement number: 2022168,2022-09-06,NSE-EQ - Z,Book Voucher,5200.929406,0.000000,4799.070594
+Net settlement for Equity with settlement number: 2022169,2022-09-07,NSE-EQ - Z,Book Voucher,2347.460047,0.000000,2451.610547
+Net settlement for Equity with settlement number: 2022170,2022-09-08,NSE-EQ - Z,Book Voucher,2301.758132,0.000000,149.852415
+Net settlement for Equity with settlement number: 2022171,2022-09-09,NSE-EQ - Z,Book Voucher,80.664512,0.000000,69.187903
+Funds added using UPI XMU913 with reference number 225510211238,2022-09-12,NSE-EQ - Z,Bank Receipts,0.000000,9000.000000,9069.187903
+Net settlement for Equity with settlement number: 2022172,2022-09-12,NSE-EQ - Z,Book Voucher,6134.018450,0.000000,2935.169453
+Funds added using UPI XMU913 with reference number 225608538449,2022-09-13,NSE-EQ - Z,Bank Receipts,0.000000,7000.000000,9935.169453
+Net settlement for Equity with settlement number: 2022173,2022-09-13,NSE-EQ - Z,Book Voucher,8050.348637,0.000000,1884.820816
+Net settlement for Equity with settlement number: 2022174,2022-09-14,NSE-EQ - Z,Book Voucher,1108.008170,0.000000,776.812646
+DP Charges for Sale of WIPRO on 16/09/2022,2022-09-16,NSE-EQ - Z,Journal Entry,15.930000,0.000000,760.882646
+DP Charges for Sale of SBIN on 16/09/2022,2022-09-16,NSE-EQ - Z,Journal Entry,15.930000,0.000000,744.952646
+Funds added using UPI XMU913 with reference number 225936178837,2022-09-16,NSE-EQ - Z,Bank Receipts,0.000000,3300.000000,4044.952646
+Net settlement for Equity with settlement number: 2022176,2022-09-16,NSE-EQ - Z,Book Voucher,3280.343808,0.000000,764.608838
+Net settlement for Equity with settlement number: 2022178,2022-09-20,NSE-EQ - Z,Book Voucher,760.043595,0.000000,4.565243
+Funds added using UPI XMU913 with reference number 227324602833,2022-09-30,NSE-EQ - Z,Bank Receipts,0.000000,10000.000000,10004.565243
+Net settlement for Equity with settlement number: 2022186,2022-09-30,NSE-EQ - Z,Book Voucher,9988.429695,0.000000,16.135548
+Funds added using UPI XMU913 with reference number 227603630845,2022-10-03,NSE-EQ - Z,Bank Receipts,0.000000,5000.000000,5016.135548
+Net settlement for Equity with settlement number: 2022187,2022-10-03,NSE-EQ - Z,Book Voucher,4383.845222,0.000000,632.290326
+Funds transferred back as part of quarterly settlement,2022-10-07,NSE-EQ - Z,Bank Payments,632.290000,0.000000,0.000326
+Net settlement for Equity with settlement number: 2022191,2022-10-10,NSE-EQ - Z,Book Voucher,2592.320262,0.000000,-2592.319936
+Funds added using UPI XMU913 with reference number 228303238061,2022-10-10,NSE-EQ - Z,Bank Receipts,0.000000,10000.000000,7407.680064
+Net settlement for Equity with settlement number: 2022192,2022-10-11,NSE-EQ - Z,Book Voucher,3424.705087,0.000000,3982.974977
+Funds added using UPI XMU913 with reference number 228609625576,2022-10-13,NSE-EQ - Z,Bank Receipts,0.000000,6000.000000,9982.974977
+Net settlement for Equity with settlement number: 2022194,2022-10-13,NSE-EQ - Z,Book Voucher,9955.428354,0.000000,27.546623
+DP Charges for Sale of TECHM on 27/10/2022,2022-10-27,NSE-EQ - Z,Journal Entry,15.930000,0.000000,11.616623
+DP Charges for Sale of RELIANCE on 27/10/2022,2022-10-27,NSE-EQ - Z,Journal Entry,15.930000,0.000000,-4.313377
+DP Charges for Sale of TCS on 27/10/2022,2022-10-27,NSE-EQ - Z,Journal Entry,15.930000,0.000000,-20.243377
+DP Charges for Sale of INFY on 27/10/2022,2022-10-27,NSE-EQ - Z,Journal Entry,15.930000,0.000000,-36.173377
+Net settlement for Equity with settlement number: 2022203,2022-10-27,NSE-EQ - Z,Book Voucher,0.000000,39345.238325,39309.064948
+Net settlement for Equity with settlement number: 2022208,2022-11-03,NSE-EQ - Z,Book Voucher,15210.698237,0.000000,24098.366711
+Closing Balance,,,,,,24098.366711

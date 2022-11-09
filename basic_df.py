@@ -1,8 +1,13 @@
 import pandas as pd
 
 # import yfinance as yf
+zero = pd.read_csv('./dataset/ZeroTrade.csv')
+data = pd.DataFrame(index=zero.index)
+data['Stock'] = zero.symbol
+data['Price'] = zero.price
+data['Qty'] = zero.trade_type.map({'buy': 1, 'sell': -1}) * zero.quantity
+data['Amount'] = data['Price'] * data['Qty']
 
-data = pd.read_csv('dataset/Kite.csv')
 data['cum_qty'] = data.groupby('Stock')['Qty'].cumsum()
 data['cum_Amt'] = data.groupby('Stock')['Amount'].cumsum()
 data['cum_Avg'] = data.loc[data['cum_qty'] > 0]['cum_Amt'] / data.loc[data['cum_qty'] > 0]['cum_qty']
