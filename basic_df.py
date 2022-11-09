@@ -3,27 +3,31 @@ import pandas as pd
 # import yfinance as yf
 
 data = pd.read_csv('dataset/Kite.csv')
-data['amm'] = data['Price'] * data['Qty']
+data['cum_qty'] = data.groupby('Stock')['Qty'].cumsum()
+data['cum_Amt'] = data.groupby('Stock')['Amount'].cumsum()
+data['cum_Avg'] = data.loc[data['cum_qty'] > 0]['cum_Amt'] / data.loc[data['cum_qty'] > 0]['cum_qty']
+data['Profit'] = -1 * data.loc[data['cum_qty'] == 0]['cum_Amt']
+data['Profit'] = data['Profit'].fillna(0)
+data['%Profit'] = -100 * data['Profit'] / data['Amount']
+data['%Profit'] = data.groupby('Stock')['%Profit'].cumsum()
+data['cum_profit'] = data.groupby('Stock')['Profit'].cumsum()
+data['Invested_amt'] = data['cum_Amt'] + data['cum_profit']
+data['apparent_avg'] = data['Invested_amt'] / data['cum_qty']
+data['apparent_amt'] = data['apparent_avg'] * data['cum_qty']
+data = data.fillna(0)
 
-sold = data.loc[data['Qty'] < 0]
-bought = data.loc[data['Qty'] > 0]
 
-sold_pivot = sold.drop(columns=['Price', 'amm']).pivot_table(index='Stock',
-                                                             aggfunc='sum')
-sold_pivot['avg_sold'] = sold_pivot['Amount'] / sold_pivot['Qty']
+stock_slice = []
+for i in data['Stock'].drop_duplicates():
+    stock_df = data.loc[data['Stock'] == i]
+    ind_x = stock_df[stock_df['cum_qty'].map(lambda x: x == 0)].index
+    stock_slice.append(stock_df.tail(1).index[0])
 
-bought_pivot = bought.drop(columns=['Price', 'amm']).pivot_table(index='Stock',
-                                                                 aggfunc='sum')
-bought_pivot['avg'] = bought_pivot['Amount'] / bought_pivot['Qty']
 
-sold_pivot['avg_buy'] = bought_pivot['avg']
-
-sold_pivot['profit_per_stock'] = sold_pivot['avg_sold'] - sold_pivot['avg_buy']
-sold_pivot['profit'] = sold_pivot['profit_per_stock'] * sold_pivot['Qty'] * -1
-
-print(sold_pivot)
-print(sum(sold_pivot['profit']))
-# tickerSymbol = 'REL'
-# tickerData = yf.Ticker(tickerSymbol)
-#
-# print(tickerData.history())
+stock_slice = pd.Index(stock_slice)
+foli0 = data.iloc[stock_slice]
+foli0 = foli0.set_index('Stock')
+foli0.loc['Total'] = foli0.sum(numeric_only=True)
+foli0.loc['Total', ['apparent_avg', 'cum_Avg']] = pd.NA
+foli0.loc['Total', ['%Profit']] = 100 * foli0.at['Total', 'cum_profit'] / foli0.at['Total', 'Invested_amt']
+print(foli0[['Invested_amt', 'cum_profit', 'cum_qty', 'apparent_avg', 'cum_Avg', '%Profit']])
